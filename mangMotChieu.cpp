@@ -56,20 +56,31 @@ struct mangMotChieu {
 	}
 	
 	void xoaPhanTuTaiViTri(int viTri) {
-		if (viTri < soPhanTu) {
-			for (int i = viTri; i < soPhanTu - 1; i++) {
-				mang[i] = mang[i + 1];
-			}
+		if (soPhanTu == 0) {
+			cout << "Empty Array.";
 		}
-		soPhanTu--;
+		else {
+		    if (viTri < soPhanTu) {
+				for (int i = viTri; i < soPhanTu - 1; i++) {
+					mang[i] = mang[i + 1];
+				}
+			}
+			soPhanTu--;
+		}
 	}
 	
 	void xoaPhanTu(int phanTu) {
 		int i;
-		for (i = 0; i < soPhanTu; i++) {
-			if (mang[i] == phanTu) {
-				xoaPhanTuTaiViTri(i);
-				i--;
+		
+		if (soPhanTu == 0) {
+			cout << "Empty Array.";
+		}
+		else {
+			for (i = 0; i < soPhanTu; i++) {
+				if (mang[i] == phanTu) {
+					xoaPhanTuTaiViTri(i);
+					i--;
+				}
 			}
 		}
 	}
