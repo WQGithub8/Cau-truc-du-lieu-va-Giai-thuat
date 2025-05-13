@@ -1,11 +1,15 @@
 #include <iostream>
 using namespace std;
 
-struct mangMotChieu {
-	int soPhanTu = 0;
+struct mangMotChieuSoNguyen {
+	int soPhanTu;
 	int mang[100];
 	
-	void nhapMangMotChieu() {
+	mangMotChieuSoNguyen() {
+		soPhanTu = 0;
+	}
+	
+	void nhapMang() {
 		cout << "Nhap so luong phan tu: ";
 		cin >> soPhanTu;
 		cout << "Nhap mang: " << endl;
@@ -14,7 +18,7 @@ struct mangMotChieu {
 		}
 	}
 	
-	void xuatMangMotChieu() {
+	void xuatMang() {
 		if (soPhanTu == 0) {
 			cout << "Empty Array" << endl;
 		} 
@@ -57,7 +61,7 @@ struct mangMotChieu {
 	
 	void xoaPhanTuTaiViTri(int viTri) {
 		if (soPhanTu == 0) {
-			cout << "Empty Array.";
+			cout << "Empty Array." << endl;
 		}
 		else {
 		    if (viTri < soPhanTu) {
@@ -73,7 +77,7 @@ struct mangMotChieu {
 		int i;
 		
 		if (soPhanTu == 0) {
-			cout << "Empty Array.";
+			cout << "Empty Array." << endl;
 		}
 		else {
 			for (i = 0; i < soPhanTu; i++) {
@@ -128,7 +132,7 @@ struct mangMotChieu {
 }; 
 
 int main() {	
-	mangMotChieu a;
+	mangMotChieuSoNguyen a;
 	char option;
 	
 	do {
@@ -136,10 +140,10 @@ int main() {
 		cin >> option;
 		switch (option) {
 			case '1':
-				a.nhapMangMotChieu();
+				a.nhapMang();
 				break;
 			case '2':
-				a.xuatMangMotChieu();
+				a.xuatMang();
 				break;
 			case '3':
 				int phanTu;
