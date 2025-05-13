@@ -2,7 +2,7 @@
 using namespace std;
 
 struct mangMotChieu {
-	int soPhanTu;
+	int soPhanTu = 0;
 	int mang[100];
 	
 	void nhapMangMotChieu() {
@@ -117,7 +117,7 @@ struct mangMotChieu {
 }; 
 
 int main() {	
-	mangMotChieu a = {};
+	mangMotChieu a;
 	char option;
 	
 	do {
